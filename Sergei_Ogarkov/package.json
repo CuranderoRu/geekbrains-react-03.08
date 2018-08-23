@@ -6,6 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development",
+    "devtool:component": "node cli/component.js --name",
+    "devtool:container": "node cli/container.js --name",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

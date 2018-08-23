@@ -4,14 +4,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, 'src', 'index.jsx')
+        main: path.resolve(__dirname, 'src', 'index.jsx'),
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        alias: {
+            components: path.resolve(__dirname, 'src', 'components'),
+            containers: path.resolve(__dirname, 'src', 'containers'),
+        },
     },
     module: {
         rules: [
@@ -23,19 +27,22 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/,
+                test: /\.s?css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader']
+                    use: ['css-loader', 'sass-loader']
                 })
-            }
+            },
         ]
     },
     plugins: [
-        new ExtractTextPlugin({filename: 'bundle.css'}),
+        new ExtractTextPlugin({ filename: 'bundle.css' }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html'),
-            filename: 'index.html'
+            filename: 'index.html',
         })
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true,
+    },
 }

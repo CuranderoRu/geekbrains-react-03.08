@@ -8,22 +8,19 @@ import SideNav from './components/SideNav';
 import Wrapper from './components/Wrapper';
 import ArticlesList from './components/ArticlesList';
 
-import CommentsList from 'containers/CommentsListContainer';
+import CommentsList from 'components/CommentsList';
 import CommentsForm from 'components/CommentsForm';
 
 const menuItems = [
     {
-        id: 1,
         label: 'Sport',
         href: '/sport'
     },
     {
-        id: 2,
         label: 'News',
         href: '/new'
     },
     {
-        id: 3,
         label: 'Fasion',
         href: '/fasion'
     },
@@ -32,17 +29,14 @@ const menuItems = [
 
 const sideNavItems = [
     {
-        id: 1,
         label: 'Recent',
         href: '/recent'
     },
     {
-        id: 2,
         label: 'Friends',
         href: '/friends'
     },
     {
-        id: 3,
         label: 'Recommended',
         href: '/recommended'
     },

@@ -40,7 +40,7 @@ export default class NavBar extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
-                            {items.map((item) => <NavItem><NavLink href={item.href}>{item.label}</NavLink></NavItem>)}
+                            {items.map((item) => <NavItem  key={item.id}><NavLink href={item.href}>{item.label}</NavLink></NavItem>)}
                             <NavItem><Button color="success">Login</Button>{'   '}</NavItem>
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>

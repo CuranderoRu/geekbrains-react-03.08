@@ -24,7 +24,7 @@ export default class ArticlesList extends Component {
 
     return (
       <div className="ArticlesList">
-          {articles.map((article) => <div><Article {...article}/></div>)}
+          {articles.map((article) => <div key={article.article_id}><Article {...article}/></div>)}
       </div>
     );
   }
